@@ -1,0 +1,3 @@
+[submodule "packages/backend/assets-service/pokeapi-sprites"]
+	path = packages/backend/assets-service/pokeapi-sprites
+	url = https://github.com/PokeAPI/sprites.git
