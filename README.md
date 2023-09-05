@@ -11,6 +11,8 @@ You can watch a recording of the meetup where this portal was demonstrated [on Y
 
 > **⚠️ Important:**  
 > Be aware that the code in this repository is, at the moment, in a "non-production, tuned-for-presentations" state, meaning that there are several locations which are not optimal, to say the least. The focus of this portal lies on demonstrating several features of the [Piral Feed Service](https://www.piral.cloud/). No explicit focus was put on developing production-ready code or top-quality backend services.
+>
+> If you want to help improve the quality of the code and/or add cool new features that improve this demo portal, feel free to open a pull request! ♥️
 
 ## Getting Started
 
