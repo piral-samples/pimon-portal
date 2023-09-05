@@ -1,6 +1,11 @@
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
+// Set this to true if you want to do local development.
+// Setting this to true will cause this proxy service to forward requests to localhost:1234
+// instead of a hosted feed service.
+const useDevServer = true;
+
 const app = express();
 const port = 3000;
 
@@ -55,7 +60,7 @@ app.use(
 app.use(
   '/',
   createProxyMiddleware({
-    target: 'YOUR_FEED_URL_HERE/_/pimon-portal',
+    target: useDevServer ? 'http://localhost:1234' : 'YOUR_FEED_URL_HERE/_/pimon-portal',
     pathRewrite: {
       '^/_/pimon-portal': '',
     },
