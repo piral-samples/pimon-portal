@@ -90,6 +90,10 @@ The portal contains the following user accounts which you can use for logging in
 | `misty`  | `Misty123`  | `gym-leader` |
 | `ash`    | `Ash123`    | `trainer`    |
 
+## Local Development
+
+Local development happens without the feed service, but still leverages the proxy service. To make the proxy service use the local dev server instead of the feed service, navigate to the `packages/backend/proxy-service/src/index.ts` file and change the `const useDevServer = false;` line to `const useDevServer = true;`. This will make the service forward asset-related requests to to `localhost:1234`, i.e., the default port on which a Piral application is started locally. Once changed, simply run `npm start` to begin your local dev session.
+
 ## License
 
 Piral and this sample code is released using the MIT license. For more information see the [license file](./LICENSE).
