@@ -1,0 +1,20 @@
+# Compiled Files
+dist
+lib
+*.tgz
+
+# OS Files
+.DS_STORE
+
+# npm
+node_modules
+
+# Editor Files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# Sensitive
+.env
+.piralrc

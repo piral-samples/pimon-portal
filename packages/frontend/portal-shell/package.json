@@ -1,0 +1,49 @@
+{
+  "private": "true",
+  "version": "0.1.0",
+  "name": "@smapiot/pimon-portal-shell",
+  "description": "The portal's shell.",
+  "keywords": [
+    "piral"
+  ],
+  "scripts": {
+    "start": "piral debug",
+    "build": "piral build --type release",
+    "build:public": "piral build --type release --public-url \"/_/pimon-portal\"",
+    "declaration": "piral declaration"
+  },
+  "app": "./src/index.html",
+  "types": "dist/index.d.ts",
+  "importmap": {
+    "imports": {
+      "@emotion/react": ".",
+      "@mantine/core": ".",
+      "@mantine/hooks": ".",
+      "@tabler/icons-react": ".",
+      "@smapiot/pimon-portal-lib": ".",
+      "swr": "."
+    },
+    "inherit": [
+      "piral-base",
+      "piral-core",
+      "piral"
+    ]
+  },
+  "dependencies": {
+    "@emotion/react": "11.11.1",
+    "@mantine/core": "6.0.19",
+    "@mantine/hooks": "6.0.19",
+    "@smapiot/pimon-portal-lib": "0.1.0",
+    "@tabler/icons-react": "2.30.0",
+    "piral": "1.1.0",
+    "piral-auth": "1.1.0",
+    "piral-base": "1.1.0",
+    "piral-core": "1.1.0",
+    "piral-fetch": "1.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-router": "^5",
+    "react-router-dom": "^5",
+    "swr": "2.2.0"
+  }
+}

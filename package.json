@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "name": "@smapiot/pimon-portal",
+  "author": "smapiot",
+  "license": "MIT",
+  "workspaces": [
+    "packages/backend/*",
+    "packages/frontend/*"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start:be\" \"npm run start:fe:pilets\"",
+    "start:be": "lerna run start --scope @smapiot/**-service",
+    "start:fe:pilets": "pilet debug packages/frontend/*-pilet",
+    "start:fe:shell": "lerna run start --scope @smapiot/pimon-portal-shell",
+    "build": "npm run clean && lerna run build",
+    "build:fe:shell": "lerna run build --scope @smapiot/pimon-portal-shell",
+    "clean": "rimraf packages/**/**/dist && rimraf packages/**/**/*.tgz",
+    "test": "lerna run test",
+    "pack": "lerna run pack",
+    "publish": "lerna run publish",
+    "tsc": "tsc --noEmit",
+    "lint": "eslint packages/**/**/src",
+    "format": "prettier -w .",
+    "declaration": "lerna run declaration",
+    "postinstall": "npm run declaration"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.196",
+    "@types/node": "latest",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-router": "^5",
+    "@types/react-router-dom": "^5",
+    "@typescript-eslint/eslint-plugin": "6.3.0",
+    "@typescript-eslint/parser": "6.3.0",
+    "concurrently": "8.2.0",
+    "eslint": "8.46.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-prettier": "5.0.0",
+    "lerna": "7.1.4",
+    "lodash": "4.17.21",
+    "piral-cli": "1.1.0",
+    "piral-cli-webpack5": "1.1.0",
+    "prettier": "3.0.1",
+    "rimraf": "5.0.1",
+    "typescript": "latest"
+  }
+}

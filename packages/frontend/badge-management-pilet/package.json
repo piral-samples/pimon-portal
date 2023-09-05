@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "name": "@smapiot/pimon-portal-badge-management-pilet",
+  "description": "The pilet for managing badges.",
+  "keywords": [
+    "pilet"
+  ],
+  "scripts": {
+    "start": "pilet debug",
+    "build": "pilet build",
+    "pack": "pilet pack",
+    "publish": "pilet publish --url YOUR_FEED_URL_HERE/api/v1/pilet/pimon-portal",
+    "upgrade": "pilet upgrade"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "source": "src/index.tsx",
+  "importmap": {
+    "imports": {},
+    "inherit": [
+      "@smapiot/pimon-portal-shell"
+    ]
+  },
+  "dependencies": {
+    "@mantine/form": "6.0.19",
+    "recharts": "2.7.3"
+  },
+  "devDependencies": {
+    "@emotion/react": "11.11.1",
+    "@mantine/core": "6.0.19",
+    "@mantine/hooks": "6.0.19",
+    "@smapiot/pimon-portal-shell": "0.1.0",
+    "@tabler/icons-react": "2.30.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-router": "^5",
+    "react-router-dom": "^5",
+    "tslib": "latest"
+  }
+}

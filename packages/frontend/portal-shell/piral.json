@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.piral.io/schemas/piral-v0.json",
+  "pilets": {
+    "files": [],
+    "scripts": {},
+    "template": "default",
+    "validators": {},
+    "devDependencies": {},
+    "preScaffold": "",
+    "postScaffold": "",
+    "preUpgrade": "",
+    "postUpgrade": "",
+    "packageOverrides": {}
+  }
+}
