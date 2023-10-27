@@ -10,11 +10,11 @@
   "scripts": {
     "start": "concurrently \"npm run start:be\" \"npm run start:fe:pilets\"",
     "start:be": "lerna run start --scope @smapiot/**-service",
-    "start:fe:pilets": "pilet debug packages/frontend/*-pilet --log-level 5",
+    "start:fe:pilets": "pilet debug packages/frontend/*-pilet",
     "start:fe:shell": "lerna run start --scope @smapiot/pimon-portal-shell",
     "build": "npm run clean && lerna run build",
     "build:fe:shell": "lerna run build --scope @smapiot/pimon-portal-shell",
-    "clean": "rimraf packages/**/**/dist && rimraf packages/**/**/*.tgz",
+    "clean": "rimraf --glob packages/**/**/dist && rimraf --glob packages/**/**/*.tgz",
     "test": "lerna run test",
     "pack": "lerna run pack",
     "publish": "lerna run publish",
@@ -42,7 +42,7 @@
     "piral-cli": "1.3.2",
     "piral-cli-webpack5": "1.3.2",
     "prettier": "3.0.1",
-    "rimraf": "5.0.1",
+    "rimraf": "5.0.5",
     "typescript": "latest"
   }
 }
