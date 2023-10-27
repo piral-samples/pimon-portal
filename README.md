@@ -77,7 +77,7 @@ On the following page, select _"Custom"_, enter an unused version (the default, 
 
 If everything went well, the portal can now be accessed! 🎉
 
-The only thing you need is the backend services running locally. Run `npm start` and, once all processes have started, navigate to [http://localhost:3000](http://localhost:3000).
+The only thing you need is the backend services running locally. Run `npm run start:be` and, once all processes have started, navigate to [http://localhost:3000](http://localhost:3000).
 
 ## Portal Accounts
 
