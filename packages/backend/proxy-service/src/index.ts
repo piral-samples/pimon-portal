@@ -4,7 +4,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 // Set this to true if you want to do local development.
 // Setting this to true will cause this proxy service to forward requests to localhost:1234
 // instead of a hosted feed service.
-const useDevServer = true;
+const useDevServer = false;
 
 const app = express();
 const port = 3000;
