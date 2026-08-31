@@ -6,7 +6,7 @@ import { Page, SectionHeader, usePiletApi } from '@smapiot/pimon-portal-lib';
 
 export default function PokedexPage() {
   const { meta } = usePiletApi();
-  const pokedexSize = meta.config.pokedexSize ?? 9;
+  const pokedexSize = meta.config?.pokedexSize ?? 9;
 
   return (
     <Page title="Pokédex">
