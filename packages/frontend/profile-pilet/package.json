@@ -23,19 +23,7 @@
       "@smapiot/pimon-portal-shell"
     ]
   },
-  "dependencies": {
-    "@mantine/form": "6.0.19",
-    "recharts": "2.7.3"
-  },
   "devDependencies": {
-    "@emotion/react": "11.11.1",
-    "@mantine/core": "6.0.19",
-    "@mantine/hooks": "6.0.19",
-    "@smapiot/pimon-portal-shell": "0.1.0",
-    "@tabler/icons-react": "2.30.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-router": "^5",
-    "react-router-dom": "^5"
+    "@smapiot/pimon-portal-shell": "0.1.0"
   }
 }
