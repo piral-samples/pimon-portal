@@ -19,6 +19,7 @@
     "pack": "lerna run pack",
     "publish": "lerna run publish",
     "version": "lerna version --force-publish --no-git-tag-version --no-push",
+    "release": "npm run build && npm run version && npm run pack && npm run publish",
     "tsc": "tsc --noEmit",
     "lint": "eslint packages/**/**/src",
     "format": "prettier -w .",
