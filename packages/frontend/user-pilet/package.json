@@ -36,7 +36,6 @@
     "react": "^18",
     "react-dom": "^18",
     "react-router": "^5",
-    "react-router-dom": "^5",
-    "tslib": "latest"
+    "react-router-dom": "^5"
   }
 }
