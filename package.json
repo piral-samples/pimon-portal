@@ -42,6 +42,7 @@
     "@typescript-eslint/parser": "6.3.0",
     "@tabler/icons-react": "2.30.0",
     "concurrently": "10.0.5",
+    "dotenv": "16.4.7",
     "eslint": "8.46.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-prettier": "5.0.0",
