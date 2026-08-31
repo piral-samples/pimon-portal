@@ -8,8 +8,7 @@
   ],
   "scripts": {
     "start": "piral debug",
-    "build": "piral build --type release",
-    "build:public": "piral build --type release --public-url \"/_/pimon-portal\"",
+    "build": "piral build --type release && piral build --target dist/public --type release --public-url \"/_/pimon-portal\"",
     "declaration": "piral declaration"
   },
   "app": "./src/index.html",
