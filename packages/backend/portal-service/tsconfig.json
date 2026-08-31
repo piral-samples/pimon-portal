@@ -3,6 +3,7 @@
   "compilerOptions": {
     "module": "CommonJS",
     "outDir": "dist",
+    "rootDir": "src",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "incremental": true

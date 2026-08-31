@@ -12,7 +12,7 @@ import { ProfileEntity } from './profile/profile.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'sqlite',
+      type: 'better-sqlite3',
       database: ':memory:',
       synchronize: true,
       entities: [UserEntity, ProfileEntity],
