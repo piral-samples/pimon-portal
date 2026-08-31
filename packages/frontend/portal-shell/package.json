@@ -9,6 +9,7 @@
   "scripts": {
     "start": "piral debug",
     "build": "piral build --type release && piral build --target dist/public --type release --public-url \"/_/pimon-portal\"",
+    "publish": "node ../../../scripts/publish-shell.mjs",
     "declaration": "piral declaration"
   },
   "app": "./src/index.html",
