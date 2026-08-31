@@ -6,7 +6,7 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 import { Pokemon, PokemonMove, PokemonSpecies } from './types';
 import capitalize from 'lodash/capitalize';
 import { TypeBadge } from './TypeBadge';
-import { ErrorState, Page, SectionHeader } from '@smapiot/pimon-portal-lib';
+import { ErrorState, Page, SectionHeader, useFeatureFlag } from '@smapiot/pimon-portal-lib';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -28,6 +28,7 @@ export default function PokemonDetailsPage() {
   const { id: pokemonId } = useParams<{ id: string }>();
   const { classes } = useStyles();
   const { isLoading, data, error } = useSWRImmutable<Pokemon>(`/gw/pokeapi/api/v2/pokemon/${pokemonId}`);
+  const showMoves = useFeatureFlag('pokedex-moves');
   const pokemonStats = data?.stats.map((stat) => ({ name: capitalize(stat.stat.name), x: stat.base_stat }));
 
   return (
@@ -44,7 +45,7 @@ export default function PokemonDetailsPage() {
             <Grid.Col span={4}>
               <Card shadow="sm" padding="xl" component="a" sx={{ height: '100%' }}>
                 <Group position="apart" sx={{ height: '100%' }}>
-                  <Skeleton visible={isLoading} >
+                  <Skeleton visible={isLoading}>
                     <Image src={`/gw/assets/sprites/pokemon/${pokemonId}.png`} height={200} width={200} />
                   </Skeleton>
                   <Text>
@@ -114,20 +115,28 @@ export default function PokemonDetailsPage() {
               </Card>
             </Grid.Col>
           </Grid>
-          <SectionHeader title="Moves" subtitle={`Moves which can be learned by ${capitalize(data?.name)}.`} />
-          <Table>
-            <thead>
-              <tr>
-                <th>Type</th>
-                <th>Move</th>
-                <th>Accuracy</th>
-                <th>Power</th>
-                <th>PP</th>
-                <th>Class</th>
-              </tr>
-            </thead>
-            <tbody>{data?.moves.map((move) => <PokemonMoveRow name={move.move.name} key={move.move.name} />)}</tbody>
-          </Table>
+          {showMoves && (
+            <>
+              <SectionHeader title="Moves" subtitle={`Moves which can be learned by ${capitalize(data?.name)}.`} />
+              <Table>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Move</th>
+                    <th>Accuracy</th>
+                    <th>Power</th>
+                    <th>PP</th>
+                    <th>Class</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data?.moves.map((move) => (
+                    <PokemonMoveRow name={move.move.name} key={move.move.name} />
+                  ))}
+                </tbody>
+              </Table>
+            </>
+          )}
         </>
       )}
     </Page>

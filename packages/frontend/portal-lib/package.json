@@ -14,7 +14,8 @@
     "@tabler/icons-react": "*",
     "piral-core": "*",
     "react": "^18",
-    "react-router-dom": "^5"
+    "react-router-dom": "^5",
+    "swr": "*"
   },
   "devDependencies": {
     "piral-core": "1.12.3"

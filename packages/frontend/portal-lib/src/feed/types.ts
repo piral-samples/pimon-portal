@@ -4,6 +4,14 @@ export interface FeedServiceItemsResponse<T> {
 }
 
 /**
+ * https://feed.piral.cloud/api-docs/#/feature-flags/getFeatureFlags
+ */
+export interface FeedServiceFeatureFlagsResponse {
+  feed: string;
+  flags: Array<string>;
+}
+
+/**
  * https://feed.piral.cloud/api-docs/#/entities/getPublicEntities
  */
 export interface FeedServiceEntity {
