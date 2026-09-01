@@ -6,6 +6,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 config({ path: resolve(__dirname, '../../../../.env') });
 
 const feedServiceUrl = process.env.FEED_SERVICE_URL;
+const feedName = process.env.FEED_NAME;
 
 const app = express();
 const port = 3000;
@@ -61,9 +62,9 @@ app.use(
 app.use(
   '/',
   createProxyMiddleware({
-    target: `${feedServiceUrl}/_/pimon-portal`,
+    target: `${feedServiceUrl}/_/${feedName}`,
     pathRewrite: {
-      '^/_/pimon-portal': '',
+      [`^/_/${feedName}`]: '',
     },
     changeOrigin: true,
     ws: true,

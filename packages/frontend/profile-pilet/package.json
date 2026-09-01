@@ -6,8 +6,8 @@
     "pilet"
   ],
   "scripts": {
-    "start": "pilet debug",
-    "build": "pilet build",
+    "start": "pilet debug --env ../../../.env",
+    "build": "pilet build --env ../../../.env",
     "pack": "pilet pack",
     "publish": "pilet publish",
     "upgrade": "pilet upgrade"
@@ -24,6 +24,6 @@
     ]
   },
   "devDependencies": {
-    "@smapiot/pimon-portal-shell": "0.1.0"
+    "@smapiot/pimon-portal-shell": "^0.1.0"
   }
 }

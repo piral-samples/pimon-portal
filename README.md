@@ -32,6 +32,10 @@ git submodule update
 npm i
 ```
 
+Then, create a feed for the portal within the feed service. For reference, this is how a reference feed creation screen looks like:
+
+![Feed Creation](.github/assets/feed-creation.png)
+
 Next, configure pilet publishing in the root `.piralrc` file (the file must be created first). For `url`, use the complete pilet publishing endpoint:
 
 ```json
@@ -40,10 +44,6 @@ Next, configure pilet publishing in the root `.piralrc` file (the file must be c
   "apiKey": "YOUR_API_KEY_HERE"
 }
 ```
-
-The portal assumes that it is deployed into a feed called **`pimon-portal`**. When you create a feed in the feed service, ensure that you name it accordingly. For reference, this is how a reference feed creation screen looks like:
-
-![Feed Creation](.github/assets/feed-creation.png)
 
 To publish the portal's assets into the feed service, you must first create an API key. This can be done via the feed service's UI. You can use the following image as reference:
 
@@ -54,6 +54,7 @@ At last, create a root `.env` file with remaining configurations:
 
 ```env
 FEED_SERVICE_URL=https://feed.piral.cloud.com
+FEED_NAME=pimon-portal
 PAGE_API_KEY=YOUR_PAGE_API_KEY_HERE
 ```
 

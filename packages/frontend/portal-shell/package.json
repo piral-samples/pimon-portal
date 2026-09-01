@@ -30,7 +30,7 @@
     ]
   },
   "dependencies": {
-    "@smapiot/pimon-portal-lib": "0.1.0",
+    "@smapiot/pimon-portal-lib": "^0.1.0",
     "piral": "1.12.3",
     "piral-auth": "1.12.3",
     "piral-base": "1.12.3",
