@@ -7,6 +7,7 @@ config({ path: resolve(__dirname, '../../../../.env') });
 
 const feedServiceUrl = process.env.FEED_SERVICE_URL;
 const feedName = process.env.FEED_NAME;
+const useDevServer = process.env.NODE_ENV === 'development';
 
 const app = express();
 const port = 3000;
@@ -62,7 +63,7 @@ app.use(
 app.use(
   '/',
   createProxyMiddleware({
-    target: `${feedServiceUrl}/_/${feedName}`,
+    target: useDevServer ? 'http://localhost:1234' : `${feedServiceUrl}/_/${feedName}`,
     pathRewrite: {
       [`^/_/${feedName}`]: '',
     },

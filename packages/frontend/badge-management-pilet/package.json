@@ -6,7 +6,7 @@
     "pilet"
   ],
   "scripts": {
-    "start": "pilet debug --env ../../../.env",
+    "dev": "pilet debug --env ../../../.env",
     "build": "pilet build --env ../../../.env",
     "pack": "pilet pack",
     "publish": "pilet publish",

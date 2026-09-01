@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "Portal-related APIs.",
   "scripts": {
+    "dev": "nest start --watch --debug",
     "start": "nest start --watch --debug",
     "build": "nest build"
   },

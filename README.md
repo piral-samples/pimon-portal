@@ -83,7 +83,7 @@ On the following page, select _"Custom"_, enter an unused version (the default, 
 
 If everything went well, the portal can now be accessed! 🎉
 
-The only thing you need is the backend services running locally. Run `npm run start:be` and, once all processes have started, navigate to [http://localhost:3000](http://localhost:3000).
+The only thing you need is the backend services running locally. Run `npm start` and, once all processes have started, navigate to [http://localhost:3000](http://localhost:3000).
 
 ## Portal Accounts
 
@@ -119,7 +119,7 @@ To fully configure the portal within the feed service, the following options mus
 
 ## Local Development
 
-Local development happens without the feed service, but still leverages the proxy service. To make the proxy service use the local dev server instead of the feed service, navigate to the `packages/backend/proxy-service/src/index.ts` file and change the `const useDevServer = false;` line to `const useDevServer = true;`. This will make the service forward asset-related requests to to `localhost:1234`, i.e., the default port on which a Piral application is started locally. Once changed, simply run `npm start` to begin your local dev session.
+Local development happens without the feed service, but still leverages the proxy service. To develop locally, simply run `npm run dev` instead of `npm start`. This will start all local backend services and Piral's local Pilet dev server.
 
 ## License
 

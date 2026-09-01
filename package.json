@@ -8,10 +8,11 @@
     "packages/frontend/*"
   ],
   "scripts": {
-    "start": "concurrently \"npm run start:be\" \"npm run start:fe:pilets\"",
-    "start:be": "lerna run start --scope @smapiot/**-service",
-    "start:fe:pilets": "pilet debug packages/frontend/*-pilet",
-    "start:fe:shell": "lerna run start --scope @smapiot/pimon-portal-shell",
+    "start": "lerna run start --scope @smapiot/**-service",
+    "dev": "concurrently \"npm run dev:be\" \"npm run dev:fe:pilets\"",
+    "dev:be": "lerna run dev --scope @smapiot/**-service",
+    "dev:fe:pilets": "pilet debug packages/frontend/*-pilet",
+    "dev:fe:shell": "lerna run dev --scope @smapiot/pimon-portal-shell",
     "build": "npm run clean && lerna run build",
     "build:fe:shell": "lerna run build --scope @smapiot/pimon-portal-shell",
     "clean": "rimraf --glob packages/**/**/dist && rimraf --glob packages/**/**/*.tgz",
