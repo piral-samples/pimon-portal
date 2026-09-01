@@ -50,13 +50,15 @@ To publish the portal's assets into the feed service, you must first create an A
 ![API Key Creation](.github/assets/api-key-creation.png)
 
 
-At last, create a root `.env` file with remaining configurations:
+Next, create a root `.env` file with remaining configurations:
 
 ```env
 FEED_SERVICE_URL=https://feed.piral.cloud.com
 FEED_NAME=pimon-portal
 PAGE_API_KEY=YOUR_PAGE_API_KEY_HERE
 ```
+
+Now, at last, navigate to [`./packages/frontend/portal-shell/package.json`](./packages/frontend/portal-shell/package.json) and change the `build` command's `/_/pimon-portal` public path argument to match your feed name.
 
 With the configs in place, the portal can now be built and published. To do so, run the following commands, in order:
 
