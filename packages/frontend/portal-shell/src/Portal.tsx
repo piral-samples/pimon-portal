@@ -20,7 +20,7 @@ import { defaultMenuItems } from './defaults';
 import { useAuth } from './auth';
 import { createAuthApi } from 'piral-auth';
 
-const feedUrl = 'YOUR_FEED_URL_HERE/api/v1/pilet/pimon-portal';
+const feedUrl = `${process.env.FEED_SERVICE_URL}/api/v1/pilet/pimon-portal`;
 
 export function Portal() {
   const { token, tokenBody } = useAuth();

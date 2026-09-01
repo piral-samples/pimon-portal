@@ -9,7 +9,7 @@
     "start": "pilet debug",
     "build": "pilet build",
     "pack": "pilet pack",
-    "publish": "pilet publish --url YOUR_FEED_URL_HERE/api/v1/pilet/pimon-portal",
+    "publish": "pilet publish",
     "upgrade": "pilet upgrade"
   },
   "main": "dist/index.js",

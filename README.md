@@ -32,9 +32,14 @@ git submodule update
 npm i
 ```
 
-Next, you need to make the portal/code aware of the feed service that you are using. The code contains several locations with the `YOUR_FEED_URL_HERE` template. You can use your favorite editor's _"Find and Replace All"_ functionality to replace this placeholder with the URL of your feed service (for example, [`https://feed.piral.cloud`](https://feed.piral.cloud)). You should find and replace the following locations:
+Next, configure pilet publishing in the root `.piralrc` file (the file must be created first). For `url`, use the complete pilet publishing endpoint:
 
-![Replacements](.github/assets/feed-url-replacement.png)
+```json
+{
+  "url": "YOUR_FEED_URL_HERE/api/v1/pilet/pimon-portal",
+  "apiKey": "YOUR_API_KEY_HERE"
+}
+```
 
 The portal assumes that it is deployed into a feed called **`pimon-portal`**. When you create a feed in the feed service, ensure that you name it accordingly. For reference, this is how a reference feed creation screen looks like:
 
@@ -44,15 +49,15 @@ To publish the portal's assets into the feed service, you must first create an A
 
 ![API Key Creation](.github/assets/api-key-creation.png)
 
-The created API key can be stored in a `.piralrc` file. Storing it inside this file makes it accessible to the Piral CLI (and transitively, to all deployment related commands). To do so, create a `.piralrc` file in the repository's root directory. The file should contain the following content:
 
-```json
-{
-  "apiKey": "YOUR_API_KEY_HERE"
-}
+At last, create a root `.env` file with remaining configurations:
+
+```env
+FEED_SERVICE_URL=https://feed.piral.cloud.com
+PAGE_API_KEY=YOUR_PAGE_API_KEY_HERE
 ```
 
-With the API key in place, the portal can now be built and published. To do so, run the following commands, in order:
+With the configs in place, the portal can now be built and published. To do so, run the following commands, in order:
 
 ```sh
 # To build all packages.

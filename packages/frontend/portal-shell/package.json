@@ -7,8 +7,8 @@
     "piral"
   ],
   "scripts": {
-    "start": "piral debug",
-    "build": "piral build --type release && piral build --target dist/public --type release --public-url \"/_/pimon-portal\"",
+    "start": "piral debug --env ../../../.env",
+    "build": "piral build --type release --public-url \"/_/pimon-portal\" --env ../../../.env",
     "publish": "node ../../../scripts/publish-shell.mjs",
     "declaration": "piral declaration"
   },
