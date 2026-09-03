@@ -36,6 +36,12 @@ Then, create a feed for the portal within the feed service. For reference, this 
 
 ![Feed Creation](.github/assets/feed-creation.png)
 
+To publish the portal's assets into the feed service, you must first create an API key. This can be done via the feed service's UI. You can use the following image as reference:
+
+![API Key Creation](.github/assets/api-key-creation.png)
+
+If you later want to publish the static app shell files automatically via `npm run publish:fe:shell`, create a second API key with the `page.read` and `page.write` scopes.
+
 Next, configure pilet publishing in the root `.piralrc` file (the file must be created first). For `url`, use the complete pilet publishing endpoint:
 
 ```json
@@ -45,11 +51,6 @@ Next, configure pilet publishing in the root `.piralrc` file (the file must be c
 }
 ```
 
-To publish the portal's assets into the feed service, you must first create an API key. This can be done via the feed service's UI. You can use the following image as reference:
-
-![API Key Creation](.github/assets/api-key-creation.png)
-
-
 Next, create a root `.env` file with remaining configurations:
 
 ```env
@@ -58,7 +59,7 @@ FEED_NAME=pimon-portal
 PAGE_API_KEY=YOUR_PAGE_API_KEY_HERE
 ```
 
-Now, at last, navigate to [`./packages/frontend/portal-shell/package.json`](./packages/frontend/portal-shell/package.json) and change the `build` command's `/_/pimon-portal` public path argument to match your feed name.
+Now, at last, navigate to [`./packages/frontend/portal-shell/package.json`](./packages/frontend/portal-shell/package.json) and change the `build` command's `/_/pimon-portal` public path argument to match your feed name, if you used a different name.
 
 With the configs in place, the portal can now be built and published. To do so, run the following commands, in order:
 
@@ -69,8 +70,8 @@ npm run build
 # To pack all micro frontends into .tar files which can be uploaded to the feed service.
 npm run pack
 
-# To publish the packed files.
-npm run publish
+# To publish the packed micro frontends.
+npm run publish:fe:pilets
 ```
 
 If everything went right, your feed should now contain a list of all micro frontends:
