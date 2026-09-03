@@ -9,7 +9,7 @@ import { IconQuestionMark } from '@tabler/icons-react';
 
 export function PokedexTile() {
   const { meta } = usePiletApi();
-  const pokemonId = meta.config.pokemonOfTheDay ?? 54;
+  const pokemonId = meta.config?.pokemonOfTheDay ?? 54;
   const { isLoading, data, error } = useSWRImmutable<Pokemon>(`/gw/pokeapi/api/v2/pokemon/${pokemonId}`);
   const [show, setShow] = useState(false);
 

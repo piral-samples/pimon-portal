@@ -10,12 +10,14 @@ import { IconHome } from '@tabler/icons-react';
 import useSWRImmutable from 'swr/immutable';
 import { Skeleton } from '@mantine/core';
 
+const feedName = process.env.FEED_NAME;
+
 export function MenuContainer({ children, type }: MenuContainerProps) {
   const {
     data: entities,
     error,
     isLoading,
-  } = useSWRImmutable<FeedServiceItemsResponse<FeedServiceEntity>>('/gw/feed/api/v1/entity/pimon-portal');
+  } = useSWRImmutable<FeedServiceItemsResponse<FeedServiceEntity>>(`/gw/feed/api/v1/entity/${feedName}`);
 
   const sortedChildren =
     !isLoading && entities

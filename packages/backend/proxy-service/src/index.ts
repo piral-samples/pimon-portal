@@ -1,10 +1,13 @@
 import express from 'express';
+import { config } from 'dotenv';
+import { resolve } from 'node:path';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
-// Set this to true if you want to do local development.
-// Setting this to true will cause this proxy service to forward requests to localhost:1234
-// instead of a hosted feed service.
-const useDevServer = false;
+config({ path: resolve(__dirname, '../../../../.env') });
+
+const feedServiceUrl = process.env.FEED_SERVICE_URL;
+const feedName = process.env.FEED_NAME;
+const useDevServer = process.env.NODE_ENV === 'development';
 
 const app = express();
 const port = 3000;
@@ -12,7 +15,7 @@ const port = 3000;
 app.use(
   '/gw/feed',
   createProxyMiddleware({
-    target: 'YOUR_FEED_URL_HERE',
+    target: feedServiceUrl,
     changeOrigin: true,
     pathRewrite: {
       '^/gw/feed': '',
@@ -60,9 +63,9 @@ app.use(
 app.use(
   '/',
   createProxyMiddleware({
-    target: useDevServer ? 'http://localhost:1234' : 'YOUR_FEED_URL_HERE/_/pimon-portal',
+    target: useDevServer ? 'http://localhost:1234' : `${feedServiceUrl}/_/${feedName}`,
     pathRewrite: {
-      '^/_/pimon-portal': '',
+      [`^/_/${feedName}`]: '',
     },
     changeOrigin: true,
     ws: true,
